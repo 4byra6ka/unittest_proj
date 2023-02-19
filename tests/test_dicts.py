@@ -8,3 +8,5 @@ class TestDicts(unittest.TestCase):
         self.assertEqual(dicts.get_val({"vcs": "mercurial"}, "vcs", "git"), "mercurial")
         self.assertEqual(dicts.get_val({}, "vcs", "git"), "git")
         self.assertEqual(dicts.get_val({}, "vcs", "bazaar"), "bazaar")
+        self.assertEqual(dicts.get_val({"vcs1": "mercurial1", }, "vcs", "bazaar"), "bazaar")
+        self.assertEqual(dicts.get_val({"vcs1": "mercurial1", "vcs": "mercurial"}, "vcs", "bazaar"), "mercurial")
